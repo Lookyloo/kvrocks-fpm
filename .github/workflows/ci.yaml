@@ -1,9 +1,10 @@
 name: Release
 
 on:
+  workflow_dispatch:
   push:
     tags:
-      - "v*.*.*"
+      - 2.**
 
 env:
   DEB_FPM_OPTS: >-
