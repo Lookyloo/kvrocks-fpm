@@ -41,6 +41,8 @@ jobs:
           path: kvrocks
           fetch-tags: true
           ref: "${{ env.VERSION }}"
+      
+      - name: Build kvrocks 
         run: |
           cd kvrocks
           ./x.py build -DPORTABLE=1 -DCMAKE_BUILD_TYPE=Release -j $(nproc)
