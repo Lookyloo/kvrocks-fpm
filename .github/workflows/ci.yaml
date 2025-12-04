@@ -41,8 +41,6 @@ jobs:
           path: kvrocks
           fetch-tags: true
           ref: "${{ env.VERSION }}"
-
-      - name: Build kvrocks
         run: |
           cd kvrocks
           ./x.py build -DPORTABLE=1 -DCMAKE_BUILD_TYPE=Release -j $(nproc)
@@ -85,7 +83,6 @@ jobs:
 
       - name: Release
         uses: softprops/action-gh-release@v2.4.0
-        if: github.ref_type == 'tag'
         with:
           name: |
             ${{ env.VERSION }}-${{ env.ITERATION }}
