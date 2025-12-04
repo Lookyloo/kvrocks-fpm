@@ -42,7 +42,7 @@ jobs:
           repository: apache/kvrocks
           path: kvrocks
           fetch-tags: true
-          ref: "${{ env.VERSION }}"
+          ref: "v${{ env.VERSION }}"
 
       - name: Build kvrocks
         run: |
